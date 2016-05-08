@@ -1,14 +1,14 @@
 (function(){
 	// 全局配置
 	var config = {
-		canvasId : 'canvas',		// canvas元素的id值
-		canvasWidth : 800,			// canvas的宽度
-		canvasHeight : 300,			// canvas的高度
-		color : '#084',				// 颜色
-		radius : 4,					// 圆的半径
-		left : 100,					// 左上角的左边距
-		top : 50,					// 左上角的上边距
-		isAnimate : false,			// 是否显示动画
+		canvasId : 'canvas',   // canvas元素的id值
+		canvasWidth : 800,   // canvas的宽度
+		canvasHeight : 300,   // canvas的高度
+		color : '#084',   // 颜色
+		radius : 4,   // 圆的半径
+		left : 100,   // 左上角的左边距
+		top : 50,   // 左上角的上边距
+		isAnimate : false,   // 是否显示动画
 		// 数字 数组 1-9 :
 		digit : [
 			[ [0,0,1,1,1,0,0], [0,1,1,0,1,1,0], [1,1,0,0,0,1,1], [1,1,0,0,0,1,1], [1,1,0,0,0,1,1], [1,1,0,0,0,1,1], [1,1,0,0,0,1,1], [1,1,0,0,0,1,1], [0,1,1,0,1,1,0], [0,0,1,1,1,0,0] ],//0
