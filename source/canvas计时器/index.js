@@ -1,13 +1,15 @@
 (function(){
+	// 全局配置
 	var config = {
 		canvasId : 'canvas',		// canvas元素的id值
 		canvasWidth : 800,			// canvas的宽度
-		canvasHeight : 600,			// canvas的高度
+		canvasHeight : 300,			// canvas的高度
 		color : '#084',				// 颜色
 		radius : 4,					// 圆的半径
-		left : 50,					// 左上角的左边距
+		left : 100,					// 左上角的左边距
 		top : 50,					// 左上角的上边距
-		isAnimate : true,			// 是否显示动画
+		isAnimate : false,			// 是否显示动画
+		// 数字 数组 1-9 :
 		digit : [
 					[ [0,0,1,1,1,0,0], [0,1,1,0,1,1,0], [1,1,0,0,0,1,1], [1,1,0,0,0,1,1], [1,1,0,0,0,1,1], [1,1,0,0,0,1,1], [1,1,0,0,0,1,1], [1,1,0,0,0,1,1], [0,1,1,0,1,1,0], [0,0,1,1,1,0,0] ],//0
 					[ [0,0,0,1,1,0,0], [0,1,1,1,1,0,0], [0,0,0,1,1,0,0], [0,0,0,1,1,0,0], [0,0,0,1,1,0,0], [0,0,0,1,1,0,0], [0,0,0,1,1,0,0], [0,0,0,1,1,0,0], [0,0,0,1,1,0,0], [1,1,1,1,1,1,1] ],//1
@@ -21,6 +23,7 @@
 			        [ [0,1,1,1,1,1,0], [1,1,0,0,0,1,1], [1,1,0,0,0,1,1], [1,1,0,0,0,1,1], [0,1,1,1,0,1,1], [0,0,0,0,0,1,1], [0,0,0,0,0,1,1], [0,0,0,0,1,1,0], [0,0,0,1,1,0,0], [0,1,1,0,0,0,0] ],//9
 			        [ [0,0,0,0], [0,0,0,0], [0,1,1,0], [0,1,1,0], [0,0,0,0], [0,0,0,0], [0,1,1,0], [0,1,1,0], [0,0,0,0], [0,0,0,0] ]//:
 		],
+		// 随机颜色
 		colors : [
 			"#ffff00", "#ffff33", "#ffff66", "#ffff99", "#ffffcc", "#ffffff",  "#ccffff", "#ccffcc", "#ccff99", "#ccff66", "#ccff33", "#ccff00", 
 			"#ffcc00", "#ffcc33", "#ffcc66", "#ffcc99", "#ffcccc", "#ffccff",  "#ccccff", "#cccccc", "#cccc99", "#cccc66", "#cccc33", "#cccc00", 
@@ -45,6 +48,9 @@
 		]
 	};
 
+	/**
+	 * 主函数
+	 */
 	function main() {
 		var canvas = document.getElementById(config.canvasId);
 		canvas.width = config.canvasWidth;
@@ -58,6 +64,9 @@
 			update();
 		}, 50);
 
+		/**
+		 * 画时间 取show的值
+		 */
 		function drawTime() {
 			ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -91,9 +100,12 @@
 			}
 		}
 
+		/**
+		 * 更改
+		 */
 		function update() {
 			var currentShow = getCurrentTimeStr();
-			if(config.isAnimate) {
+			if(config.isAnimate) {		// 判断是否显示动画
 				if(currentShow[0] != show[0]) {
 					addBalls(config.left, config.top, show[0]);
 				}
@@ -139,6 +151,9 @@
 			}
 		}
 
+		/**
+		 * 每次变更balls数组的数据 实现移动小球 并清除不在canvas内的小球
+		 */
 		function updateBalls() {
 			for (var i = 0; i < balls.length; i++) {
 				balls[i].x += balls[i].vx;
@@ -200,5 +215,6 @@
 		}
 	}
 
+	// 执行主函数
 	main();
 }());
