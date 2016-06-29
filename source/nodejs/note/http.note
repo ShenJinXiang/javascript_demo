@@ -6,3 +6,9 @@
 	和变量相关
 
 上下文 this的值 this 指向当前函数的拥有者
+
+supervisor
+	$ npm install -g supervisor
+	sudo npm install -g supervisor
+
+	$ supervisor app.js
