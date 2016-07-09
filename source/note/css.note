@@ -16,3 +16,6 @@ CSS Sprite
 		1. 需要预先确定每个小图标的大小
 		2. 注意小图标与小图标之间的距离
 		3. 细心+耐心
+	
+	note:
+		1. background-position 向左 向下 为负值
