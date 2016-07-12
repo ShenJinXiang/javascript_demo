@@ -269,14 +269,6 @@
 				context.translate(canvas.width / 2, canvas.height / 2);
 				context.rotate((_second - 15) * 6 * Math.PI / 180);
 				context.beginPath();
-				/*
-				context.moveTo(-30, 1.5);
-				context.lineTo(0, 1.5);
-				context.lineTo(config.clock.hand.second.length, 0);
-				onntext.lineTo(0, -1.5);
-				context.lineTo(-10, -1.5);
-				*/
-
 				context.moveTo(-35, 1.5);
 				context.lineTo(0, 1.5);
 				context.lineTo(config.clock.hand.second.length, 0.5);
