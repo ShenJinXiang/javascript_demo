@@ -78,7 +78,7 @@
 			context.arc(canvas.width / 2, canvas.height / 2, config.clock.radius - config.clock.borderWidth, 0, 2 * Math.PI, true);
 			context.fillStyle = "#333";
 			context.shadowColor = "#444";
-			context.shadowBlur = 20;
+			context.shadowBlur = 10;
 			context.closePath();
 			context.fill();
 			context.restore();
@@ -186,7 +186,7 @@
 				context.beginPath();
 				context.fillStyle = "#555";
 				context.shadowColor = "#444";
-				context.shadowBlur = 5;
+				context.shadowBlur = 3;
 				context.closePath();
 				context.fillRect(-47, 60, 30, 30);
 				context.fillRect(-15, 60, 30, 30);
@@ -198,7 +198,7 @@
 			 */
 			function drawTime() {
 				context.beginPath();
-				context.font = "bold 14px Arial";
+				context.font = "normal 14px Arial";
 				context.textAlign = 'center';
 				context.textBaseline = 'middle';
 				context.fillStyle = "#fff";
@@ -234,7 +234,7 @@
 				context.strokeStyle = config.clock.origin.color;
 				context.lineCap = "round";
 				context.shadowColor = "#999";
-				context.shadowBlur = 10;
+				context.shadowBlur = 5;
 				context.shadowOffsetX = 5;
 				context.shadowOffsetY = 5;
 				context.stroke();
@@ -251,11 +251,11 @@
 				context.beginPath();
 				context.moveTo(-18, 0);
 				context.lineTo(config.clock.hand.minute.length, 0);
-				context.lineWidth = config.clock.hand.hour.width;
+				context.lineWidth = config.clock.hand.minute.width;
 				context.strokeStyle = config.clock.origin.color;
 				context.lineCap = "round";
 				context.shadowColor = "#999";
-				context.shadowBlur = 10;
+				context.shadowBlur = 5;
 				context.shadowOffsetX = 5;
 				context.shadowOffsetY = 5;
 				context.stroke();
@@ -286,7 +286,7 @@
 				context.closePath();
 				context.fillStyle = "#f60";
 				context.shadowColor = "#999";
-				context.shadowBlur = 10;
+				context.shadowBlur = 5;
 				context.shadowOffsetX = 5;
 				context.shadowOffsetY = 5;
 				context.fill();
