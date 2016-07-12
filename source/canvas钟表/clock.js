@@ -18,6 +18,7 @@
 	drawFream();
 	drawOrigin();
 	drawScale();
+	drawNumbers();
 
 	function drawFream() {
 		context.save();
@@ -74,5 +75,21 @@
 	}
 
 	function drawNumbers() {
+		var radius = config.radius - 50;
+		for(var i = 0; i < 12; i++) {
+			context.save();
+			context.beginPath();
+			context.translate(canvas.width / 2, canvas.height / 2);
+			context.font = "normal 28px arial";
+			if((i + 1) % 3 == 0) {
+				console.log(i + 1);
+				context.font = "normal 36px arial";
+			}
+			context.textAlign = 'center';
+			context.textBaseline = 'middle';
+			context.fillText(i + 1, -radius * Math.cos((-i * 30 - 120) * Math.PI  / 180), radius * Math.sin((-i * 30 - 120) * Math.PI / 180));
+			context.closePath();
+			context.restore();
+		}
 	}
 }());
